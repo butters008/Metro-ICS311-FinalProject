@@ -17,7 +17,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
-        <title>A Basic Composer</title>
+        <title>MOVIE DATABASE</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="./mainStyleSheet.css">
@@ -29,8 +29,8 @@
         <ul>
             <a href="index.php">
               <li class="horozontal-li-logo">
-              <img src ="./images/main_logo.png">
-              <br/>A Basic Composer</li>
+              <img src ="./images/main.jpg">
+              <br/>Movie Database</li>
             </a>
 
             <a href="index.php">
@@ -39,16 +39,22 @@
               <br/>Home</li>
             </a>
 
-            <a href="list.php">
-              <li <?php if($nav_selected == "LIST"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/list.png">
-                <br/>List</li>
+            <a href="movies.php">
+              <li <?php if($nav_selected == "MOVIES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/movies.png">
+                <br/>Movies</li>
             </a>
 
-            <a href="timeline.php">
-              <li <?php if($nav_selected == "TIMELINE"){ echo 'class="current-page"'; } ?>>
-              <img src="./images/gantt.png">
-              <br/>Timeline</li>
+            <a href="people.php">
+              <li <?php if($nav_selected == "PEOPLE"){ echo 'class="current-page"'; } ?>>
+              <img src="./images/people.png">
+              <br/>People</li>
+            </a>
+
+            <a href="songs.php">
+              <li <?php if($nav_selected == "SONGS"){ echo 'class="current-page"'; } ?>>
+              <img src="./images/songs.jpg">
+              <br/>Songs</li>
             </a>
 
             <a href="reports.php">
@@ -57,8 +63,9 @@
               <br/>Reports</li>
             </a>
 
-            <a href="scanner.php">
-              <li <?php if($nav_selected == "SCANNER"){ echo 'class="current-page"'; } ?>>
+
+            <!-- <a href="scanner.php">
+              <li <?php if($nav_selected == "SONGS"){ echo 'class="current-page"'; } ?>>
                 <img src="./images/scanner.png">
                 <br/>Scanner</li>
             </a>
@@ -86,12 +93,12 @@
           <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
             <img src="./images/about.png">
             <br/>About</li>
-        </a>
+        </a> -->
 
-        <a href="help.php">
+        <a href="Help.php">
           <li <?php if($nav_selected == "HELP"){ echo 'class="current-page"'; } ?>>
             <img src="./images/help.png">
-            <br/>help</li>
+            <br/>Help</li>
         </a>
 
       </ul>

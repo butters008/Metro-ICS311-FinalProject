@@ -17,14 +17,14 @@
 <head>
 <style>
 table.center {
-    margin-left:auto; 
+    margin-left:auto;
     margin-right:auto;
   }
 </style>
 </head>
 
 <body>
-<h2 style = "color: #01B0F1;">Welcome to ABC </h3>
+<h2 style = "color: #01B0F1;">Welcome to a movie database! </h3>
 </body>
 
 </html>
