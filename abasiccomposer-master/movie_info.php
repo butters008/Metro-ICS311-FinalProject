@@ -51,14 +51,34 @@
 
               <?php
 
-if (isset($_GET['movie_id'])) {
+// if (isset($_GET['movie_id'])) {
 
-    $id = mysqli_real_escape_string($db, $_GET['movie_id']);
-    $sql = "SELECT * FROM `(mandatorydata NATURAL JOIN metadata)` WHERE movie_id = " . $id;
-    //$GLOBALS['row_data'] = mysqli_query($db, $sql);
-} 
-// $sql = "SELECT * from (mandatorydata NATURAL JOIN metadata) WHERE movie_id = 2";
+//     $id = mysqli_real_escape_string($db, $_GET['movie_id']);
+// //    $sql = "SELECT * FROM `(mandatorydata NATURAL JOIN metadata)` WHERE movie_id = " . $id;
+//     //$GLOBALS['row_data'] = mysqli_query($db, $sql);
+// } 
 
+$sql = "SELECT * from (mandatorydata NATURAL JOIN metadata)";
+$result = $db->query($sql); 
+if(mysqli_num_rows($result) > 0){
+    // $row = mysqli_fetch_array($result);
+    // $pageVal = $row['movie_id'];
+
+    while($row = mysqli_fetch_array($result)){
+        echo"<a href='movie_info.php?={$row['movie_id']}'>{$row['movie_id']}</a>";
+        $row = mysqli_fetch_array($result);
+        $pageVal = $row['movie_id'];
+        
+//    $pageVal = $row['movie_id'];
+        // $query = "SELECT * from (mandatorydata NATURAL JOIN metadata) WHERE (?)";
+        // $stmt = prepare($query);
+        // $stmt->bind_param($pageVal);
+        // $sql = $stmt->execute();
+        
+     }
+}
+
+$sql = "SELECT * from (mandatorydata NATURAL JOIN metadata) WHERE movie_id = '$pageVal'";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
