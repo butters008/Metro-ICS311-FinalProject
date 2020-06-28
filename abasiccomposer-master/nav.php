@@ -67,39 +67,13 @@
             <!-- <a href="scanner.php">
               <li <?php if($nav_selected == "SONGS"){ echo 'class="current-page"'; } ?>>
                 <img src="./images/scanner.png">
-                <br/>Scanner</li>
-            </a>
-
-            <a href="history.php">
-              <li <?php if($nav_selected == "HISTORY"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/history.png">
-                <br/>History</li>
-            </a>
-
-            <a href="trend.php">
-              <li <?php if($nav_selected == "TREND"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/trend.png">
-                <br/>Trend</li>
-            </a>
-
-
-        <a href="setup.php">
-          <li <?php if($nav_selected == "SETUP"){ echo 'class="current-page"'; } ?>>
-            <img src="./images/setup.png">
-            <br/>Setup</li>
-        </a>
-
-        <a href="about.php">
-          <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
-            <img src="./images/about.png">
-            <br/>About</li>
-        </a> -->
-
-        <a href="Help.php">
+                <br/>Scanner</li> 
+            </a> -->
+        <!-- <a href="Help.php">
           <li <?php if($nav_selected == "HELP"){ echo 'class="current-page"'; } ?>>
             <img src="./images/help.png">
             <br/>Help</li>
-        </a>
+        </a> -->
 
       </ul>
       <br />
@@ -114,29 +88,7 @@
 
         <td style="width: 120px;" valign="top">
         <?php
-            if ($nav_selected == "HOME") {
-                include("./index.php");
-            } elseif ($nav_selected == "LIST") {
-                include("./left_menu_list.php");
-            } elseif ($nav_selected == "TIMELINE") {
-                include("./left_menu_timeline.php");
-            } elseif ($nav_selected == "REPORTS") {
-                include("./left_menu_reports.php");
-            } elseif ($nav_selected == "SCANNER") {
-                include("./left_menu_scanner.php");
-            } elseif ($nav_selected == "HISTORY") {
-                include("./left_menu_history.php");
-            } elseif ($nav_selected == "TREND") {
-              include("./left_menu_trend.php");
-           } elseif ($nav_selected == "SETUP") {
-            include("./left_menu_setup.php");
-          } elseif ($nav_selected == "ABOUT") {
-          include("./left_menu_about.php");
-          }elseif ($nav_selected == "HELP") {
-                include("./left_menu_help.php");
-            } else {
-                include("./left_menu.php");
-            }
+          include('left_menu_scanner.php');
         ?>
         </td>
         <td style="width: 1100px;" valign="top">

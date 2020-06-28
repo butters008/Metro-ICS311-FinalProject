@@ -1,8 +1,8 @@
 <?php
 
   $nav_selected = "MOVIES";
-  $left_buttons = "NO";
-  $left_selected = "";
+  $left_buttons = "YES";
+  $left_selected = "RELEASES";
 
   include("./nav.php");
   global $db;
@@ -28,6 +28,9 @@
                         <th>Genre</th>
                         <th>Trivia</th>
                         <th>Keywords</th>
+                        <th>Movie Posters</th>
+                        <th>Photo Stills</th>
+                        
                 </tr>
               </thead>
 
@@ -43,6 +46,8 @@
                         <th>Genre</th>
                         <th>Trivia</th>
                         <th>Keywords</th>
+                        <th>Movie Posters</th>
+                        <th>Photo Stills</th>
                 </tr>
               </tfoot>
 
@@ -50,7 +55,8 @@
 
               <?php
 
-$sql = "SELECT * from (mandatorydata NATURAL JOIN metadata) ORDER BY movie_id ASC;";
+$sql = "SELECT * from ((mandatorydata NATURAL JOIN metadata) NATURAL JOIN multimedia) ORDER BY movie_id ASC;";
+
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -67,6 +73,9 @@ $result = $db->query($sql);
                                 <td>'.$row["genre"].'</td>
                                 <td>'.$row["trivia"].'</td>
                                 <td>'.$row["keywords"].'</td>
+                                <td><img src = "images/'.$row["movie_poster"].'" width="200" height="200 "></td>
+                                <td><img src = "images/'.$row["photo_stills"].'" width="200" height="200" > </td>
+
                             </tr>';
                     }//end while
                 }//end if
