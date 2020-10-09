@@ -1,0 +1,26 @@
+--first case
+SELECT @name := native_name, 
+       @year := year_made,
+       @stage_name := stage_name
+FROM mpr_test_data 
+WHERE id = mpr_id;
+
+SELECT @movie_count := COUNT(native_name),
+@movie_id := movies.movie_id
+FROM movies 
+WHERE native_name = @name AND 
+      year_made = @year;
+
+SELECT @person_count := COUNT(stage_name),
+@person_id := people.people_id
+FROM people 
+WHERE stage_name = @stage_name;
+
+SELECT @relationship_count := COUNT(role)
+FROM movie_people
+WHERE movie_id = @movie_id AND people_id = @person_id;
+
+UPDATE mpr_test_data SET mpr_test_data.execution_status =
+CASE WHEN @movie_count=1 AND @person_count=1 AND @relationship_count=1 THEN "Already Exists"
+END
+WHERE mpr_test_data.id = mpr_id;
