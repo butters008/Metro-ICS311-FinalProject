@@ -5,7 +5,7 @@ $nav_selected = "HOME";
 $left_buttons = "NO";
 $left_selected = "";
 
-include("./nav.php");
+include("./helpers/nav.php");
 global $db;
 
 
